@@ -4,12 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Papa's Bank</title>
+
+    <!-- tailwindcss linked -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- fontawesome linked -->
+    <script
+      src="https://kit.fontawesome.com/90b0f6545e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <!-- this is login page of papa's bank -->
     <header>
-      <div class="papas-bank">
-        <h1>Login You'r Papa's Bank</h1>
+      <div class="bg-purple-300 p-8 w-1/2 mx-auto mt-5 shadow-lg">
+        <h1 class="text-6xl text-center text-white font-bold drop-shadow-2xl">
+          Login You'r Papa's <span class="text-purple-600">Bank</span>
+          <span class="text-purple-900">
+            <i class="fa-solid fa-arrow-right-arrow-left mx-4"></i>
+            <i class="fa-solid fa-building-columns"></i
+          ></span>
+        </h1>
       </div>
     </header>
+
+    <main class="bg-purple-300 p-8 w-1/2 mx-auto shadow-lg">
+      <section>
+        <div class="text-center drop-shadow-2xl">
+          <input
+            id="user-email"
+            type="text"
+            class="block border-4 border-gray-300 rounded-full w-[50%] p-3 focus:outline-none mx-auto"
+            placeholder="Enter Your Email"
+          /><input
+            id="user-password"
+            type="password"
+            class="block border-4 border-gray-300 rounded-full w-[50%] p-3 focus:outline-none mx-auto my-6"
+            placeholder="Enter Your Password"
+          />
+          <button
+            id="login-button"
+            class="bg-purple-600 px-8 py-4 rounded-full text-white font-semibold text-xl bg-gradient-to-l from-indigo-500 via-purple-500 to-pink-500"
+          >
+            Login
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/login.js"></script>
   </body>
 </html>

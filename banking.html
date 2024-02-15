@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papa's Bank</title>
+    <!-- tailwindcss linked -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- fontawesome linked -->
+    <script
+      src="https://kit.fontawesome.com/90b0f6545e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="flex justify-center mt-[150px]">
+    <div class="bg-purple-600 p-8 w-2/3 shadow-xl rounded-md">
+      <div>
+        <h1 class="text-6xl text-center text-white font-bold drop-shadow-2xl">
+          Welcome To Your Papa's<span class="text-purple-300 ml-3">Bank</span>
+          <span class="text-purple-900">
+            <i class="fa-solid fa-arrow-right-arrow-left mx-4"></i>
+            <i class="fa-solid fa-building-columns"></i
+          ></span>
+        </h1>
+      </div>
+
+      <!-- Deposit Withdraw Balance part -->
+
+      <section class="grid grid-flow-col gap-5 mt-8 w-2/3 mx-auto p-3">
+        <div class="bg-violet-200 p-3 rounded-md">
+          <div
+            class="drop-shadow-2xl bg-purple-300 text-center px-6 py-4 rounded-md"
+          >
+            <h2 class="text-5xl text-purple-600 font-semibold">Deposit</h2>
+            <h3 class="text-4xl text-white font-semibold py-5">
+              $<span id="deposit-amount-show">00</span>
+            </h3>
+          </div>
+          <div class="py-5 flex flex-col">
+            <input
+              id="deposit-amount"
+              type="text"
+              class="px-4 py-2 border-4 border-purple-200 rounded-full focus:outline-none"
+              placeholder="Enter Amount"
+            />
+            <button
+              id="keep-button"
+              class="bg-purple-600 text-2xl font-semibold text-white px-6 py-3 mt-5 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-white rounded-tl-xl rounded-br-xl shadow-xl flex justify-center"
+            >
+              keep
+            </button>
+          </div>
+        </div>
+        <div class="bg-violet-200 p-3 rounded-md">
+          <div
+            class="drop-shadow-2xl bg-purple-300 text-center px-6 py-4 rounded-md"
+          >
+            <h2 class="text-5xl text-purple-600 font-semibold">Withdraw</h2>
+            <h3 class="text-4xl text-white font-semibold py-5">
+              $<span id="total-withdraw">00</span>
+            </h3>
+          </div>
+          <div class="py-5 flex flex-col">
+            <input
+              id="withdraw-amount"
+              type="text"
+              class="px-4 py-2 border-4 border-purple-200 rounded-full focus:outline-none"
+              placeholder="Enter Amount"
+            />
+            <button
+              id="get-button"
+              class="bg-purple-600 text-2xl font-semibold text-white px-6 py-3 mt-5 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-white rounded-tl-xl rounded-br-xl shadow-xl flex justify-center"
+            >
+              get
+            </button>
+          </div>
+        </div>
+        <div class="bg-violet-200 p-3 rounded-md flex items-center">
+          <div
+            class="drop-shadow-2xl bg-purple-300 text-center px-6 py-4 rounded-md"
+          >
+            <h2 class="text-5xl text-purple-600 font-semibold">Balance</h2>
+            <h3 class="text-4xl text-white font-semibold py-5">
+              $<span id="total-balance">2000</span>
+            </h3>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/banking.js"></script>
+  </body>
+</html>
