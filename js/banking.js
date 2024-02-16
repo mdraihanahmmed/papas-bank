@@ -11,8 +11,10 @@ const keepButton = document
     const depositNewAmountText = depositAmountShowTag.innerText;
     const depositNewAmount = parseFloat(depositNewAmountText);
 
-    const depositTotal = depositAmount + depositNewAmount;
-    depositAmountShowTag.innerText = depositTotal;
+    if (depositAmount > 0) {
+      const depositTotal = depositAmount + depositNewAmount;
+      depositAmountShowTag.innerText = depositTotal;
+    }
 
     // total balance field update for deposit
     const totalBalanceTag = document.getElementById("total-balance");
@@ -21,7 +23,11 @@ const keepButton = document
 
     const totalBalanceAmount = depositAmount + totalBalance;
 
-    totalBalanceTag.innerText = totalBalanceAmount;
+    if (depositAmount > 0) {
+      totalBalanceTag.innerText = totalBalanceAmount;
+    } else {
+      alert("please enter a valid amount!");
+    }
 
     // clean the field
     depositAmountInputTag.value = "";
@@ -38,17 +44,23 @@ const getButton = document
     const withdrawTotalText = withdrawTotalTag.innerText;
     const withdrawTotal = parseFloat(withdrawTotalText);
 
-    const totalWithdraw = withdrawTotal + withdrawAmount;
-
-    withdrawTotalTag.innerText = totalWithdraw;
-
-    withdrawAmountTag.value = "";
-
     const totalBalanceTag = document.getElementById("total-balance");
     const totalBalanceText = totalBalanceTag.innerText;
     const totalBalance = parseFloat(totalBalanceText);
 
-    const balance = totalBalance - withdrawAmount;
+    if (withdrawAmount > 0 && withdrawAmount < totalBalance) {
+      const totalWithdraw = withdrawTotal + withdrawAmount;
 
-    totalBalanceTag.innerText = balance;
+      withdrawTotalTag.innerText = totalWithdraw;
+    } else {
+      alert("please enter valid amount");
+    }
+
+    withdrawAmountTag.value = "";
+
+    if (withdrawAmount > 0 && withdrawAmount < totalBalance) {
+      const balance = totalBalance - withdrawAmount;
+
+      totalBalanceTag.innerText = balance;
+    }
   });
